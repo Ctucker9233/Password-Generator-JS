@@ -1,22 +1,63 @@
-for(i=0; i<3; i++){
+function generate(){
+    var randomCharString = "";
+    var specChar = " !#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+    var numChar = "0123456789";
+    var lowerChar = "abcdefghijklmnopqrstuvwxyz";
+    var upperChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     //prompt user to pick a password length between 8 and 128 characters
-    passwordLength = prompt("Please select a password length between 8 and 128 characters.");
+    var passwordLength = prompt("Please select a password length between 8 and 128 characters.");
+    var passwordString = "";
 
     //check if password is long enough
-    if(passwordLength < 8 || passwordLength > 128){
-        alert("Your password does not meet the requirements. Please try again. You have " + (10-i) + " tries left.")
-    }
-    else{
-       //ask user if they want to use special characters
+    if(passwordLength > 8 && passwordLength < 128){
+        //ask user if they want to use special characters
+        var useSpecChar = prompt("Do you want to use special characters?");
+        //add special characters to the string if user selects
+        if (useSpecChar){
+            randomCharString = randomCharString + specChar;
+        }
 
         //ask user if they want to use numerical characters
+        var useNumChar = prompt("Do you want to use number characters?");
+        //add number characters to the string if user selects
+        if (useNumChar){
+            randomCharString = randomCharString + numChar;
+        }
 
         //ask user if they want to use lowercase letters
+        var useLowerChar = prompt("Do you want to use lowercase characters?");
+        //add lowercase characters to the string if user selects
+        if (useLowerChar){
+            randomCharString = randomCharString + lowerChar;
+        }
 
         //ask user if they want to use uppercase letters
-
-        //generate random password based on characters the user wants to use 
+        var useUpperCase = prompt("Do you want to use uppercase characters?");
+        //add uppercase characters to the string if users selects
+        if (useUpperCase){
+            randomCharString = randomCharString + upperChar;
+        }  
     }
-}
+    else{
+        alert("Your password does not meet the requirements. Please refresh and try again.");
+        break;
+    }
+
+    //generate random password based on characters the user wants to use 
+    if(randomCharString !== ""){
+        for (i=1; i<=passwordLength; i++){
+            passwordString = passwordString + randomCharString.charAt(Math.floor(Math.random() * Math.floor(passwordLength - 1)));
+        }
+
+        document.getElementById("password").value = passwordString;
+    }
+    else{
+        alert("You must use at least one kind of character. Please refresh and try again.");
+        break;
+    }
+}  
+
+
+
 
 
