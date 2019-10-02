@@ -59,7 +59,9 @@ function generate(){
     }
 }  
 
-
-
-
-
+function copy(){
+    var copyText = document.querySelector("#password");
+    copyText.select();
+    document.execCommand("copy");
+    alert("Your password has been copied to the clipboard.");   
+}
