@@ -40,7 +40,6 @@ function generate(){
     }
     else{
         alert("Your password does not meet the requirements. Please refresh and try again.");
-        break;
     }
 
     //generate random password based on characters the user wants to use 
@@ -53,7 +52,6 @@ function generate(){
     }
     else{
         alert("You must use at least one kind of character. Please refresh and try again.");
-        break;
     }
 }  
 
