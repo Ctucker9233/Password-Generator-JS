@@ -13,28 +13,28 @@ function generate(){
         //ask user if they want to use special characters
         var useSpecChar = prompt("Do you want to use special characters?");
         //add special characters to the string if user selects
-        if (useSpecChar){
+        if (useSpecChar === "yes"){
             randomCharString = randomCharString + specChar;
         }
 
         //ask user if they want to use numerical characters
         var useNumChar = prompt("Do you want to use number characters?");
         //add number characters to the string if user selects
-        if (useNumChar){
+        if (useNumChar === "yes"){
             randomCharString = randomCharString + numChar;
         }
 
         //ask user if they want to use lowercase letters
         var useLowerChar = prompt("Do you want to use lowercase characters?");
         //add lowercase characters to the string if user selects
-        if (useLowerChar){
+        if (useLowerChar === "yes"){
             randomCharString = randomCharString + lowerChar;
         }
 
         //ask user if they want to use uppercase letters
         var useUpperCase = prompt("Do you want to use uppercase characters?");
         //add uppercase characters to the string if users selects
-        if (useUpperCase){
+        if (useUpperCase === "yes"){
             randomCharString = randomCharString + upperChar;
         }  
     }
