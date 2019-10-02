@@ -1,6 +1,6 @@
 function generate(){
     var randomCharString = "";
-    var specChar = " !#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+    var specChar = " !#$%&'()*+,-./:;<=>?@[]^_`{|}~";
     var numChar = "0123456789";
     var lowerChar = "abcdefghijklmnopqrstuvwxyz";
     var upperChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -15,6 +15,7 @@ function generate(){
         //add special characters to the string if user selects
         if (useSpecChar === "yes"){
             randomCharString = randomCharString + specChar;
+            console.log(randomCharString);
         }
 
         //ask user if they want to use numerical characters
@@ -22,6 +23,7 @@ function generate(){
         //add number characters to the string if user selects
         if (useNumChar === "yes"){
             randomCharString = randomCharString + numChar;
+            console.log(randomCharString);
         }
 
         //ask user if they want to use lowercase letters
@@ -29,6 +31,7 @@ function generate(){
         //add lowercase characters to the string if user selects
         if (useLowerChar === "yes"){
             randomCharString = randomCharString + lowerChar;
+            console.log(randomCharString);
         }
 
         //ask user if they want to use uppercase letters
@@ -36,6 +39,7 @@ function generate(){
         //add uppercase characters to the string if users selects
         if (useUpperCase === "yes"){
             randomCharString = randomCharString + upperChar;
+            console.log(randomCharString);
         }  
     }
     else{
@@ -45,7 +49,7 @@ function generate(){
     //generate random password based on characters the user wants to use 
     if(randomCharString !== ""){
         for (i=1; i<=passwordLength; i++){
-            passwordString = passwordString + randomCharString.charAt(Math.floor(Math.random() * Math.floor(passwordLength - 1)));
+            passwordString = passwordString + randomCharString.charAt(Math.floor(Math.random() * Math.floor((randomCharString.length) - 1)));
         }
 
         document.getElementById("password").value = passwordString;
