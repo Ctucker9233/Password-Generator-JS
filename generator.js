@@ -11,33 +11,33 @@ function generate(){
     //check if password is long enough
     if(passwordLength > 8 && passwordLength < 128){
         //ask user if they want to use special characters
-        var useSpecChar = prompt("Do you want to use special characters?");
+        var useSpecChar = (prompt("Do you want to use special characters?")).toLowerCase();
         //add special characters to the string if user selects
-        if (useSpecChar === "yes"){
+        if (useSpecChar === "yes" || useSpecChar === "y"){
             randomCharString = randomCharString + specChar;
             console.log(randomCharString);
         }
 
         //ask user if they want to use numerical characters
-        var useNumChar = prompt("Do you want to use number characters?");
+        var useNumChar = (prompt("Do you want to use number characters?")).toLowerCase();
         //add number characters to the string if user selects
-        if (useNumChar === "yes"){
+        if (useNumChar === "yes" || useNumChar === "y"){
             randomCharString = randomCharString + numChar;
             console.log(randomCharString);
         }
 
         //ask user if they want to use lowercase letters
-        var useLowerChar = prompt("Do you want to use lowercase characters?");
+        var useLowerChar = (prompt("Do you want to use lowercase characters?")).toLowerCase();
         //add lowercase characters to the string if user selects
-        if (useLowerChar === "yes"){
+        if (useLowerChar === "yes" || useLowerChar === "y"){
             randomCharString = randomCharString + lowerChar;
             console.log(randomCharString);
         }
 
         //ask user if they want to use uppercase letters
-        var useUpperCase = prompt("Do you want to use uppercase characters?");
+        var useUpperCase = (prompt("Do you want to use uppercase characters?")).toLowerCase();
         //add uppercase characters to the string if users selects
-        if (useUpperCase === "yes"){
+        if (useUpperCase === "yes" || useUpperCase === "y"){
             randomCharString = randomCharString + upperChar;
             console.log(randomCharString);
         }  
