@@ -1,0 +1,11 @@
+We need to add an input for name
+we need to get the valus from input when add button is clicked
+we need to append that value to list
+we need an edit button next to name
+
+The modal needs to display
+the modal displays name
+the modal displays a <textarea> for description
+
+We need to connect the description to the name
+We need to hide the modal
